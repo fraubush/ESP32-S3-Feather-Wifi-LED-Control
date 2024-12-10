@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LED Control</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main>
+        <h1>LED Control Panel</h1>
+        <div class="control-panel">
+            <div class="global-controls">
+                <div class="brightness-slider">
+                    <label for="brightness">Brightness</label>
+                    <span id="brightness-value">50%</span>
+                    <input id="brightness" type="range" min="0" max="100" value="50" step="1" oninput="setBrightness(this.value)">
+                </div>
+                <div class="sun-follower">
+                    <label for="sun-follower">Follow Sun?</label>
+                    <input id="sun-follower" type="checkbox" oninput="setSunFollower(this.checked)">
+                </div>
+            </div>
+            <div class="button-group">
+                <button class="btn-red" onclick="setColor('red')">Red</button>
+                <button class="btn-green" onclick="setColor('green')">Green</button>
+                <button class="btn-blue" onclick="setColor('blue')">Blue</button>
+                <button class="btn-xmas" onclick="setPattern('xmasfade')">Xmas Fade</button>
+                <button class="btn-xmas-switch" onclick="setPattern('xmasswitch')">Xmas Switch</button>
+                <button class="btn-off" onclick="setColor('off')">Off</button>
+            </div>
+        </div>
+    </main>
+    <script src="/index.js"></script>
+</body>
+</html>
+
